@@ -1,4 +1,7 @@
+from ToDoList import TodoList
+
 def menu():
+    todo_list = TodoList()
     while True:
         print("\n--- TO-DO LIST ---")
         print("1. Agregar nueva tarea")
@@ -11,15 +14,15 @@ def menu():
         opcion = input("Seleccione una opción: ")
         
         if opcion == "1":
-            print("Funcion agregar tarea")
+            todo_list.agregar_tarea()
         elif opcion == "2":
-            print("Marcar como completado")
+            todo_list.marcar_completada()
         elif opcion == "3":
-            print("Eliminar tarea")
+            todo_list.eliminar_tarea()
         elif opcion == "4":
-            print("Generar reporte de faltantes")
+            todo_list.reporte_en_curso_no_iniciadas()
         elif opcion == "5":
-            print("Generar reporte de completados")
+            todo_list.reporte_completadas()
         elif opcion == "6":
             print("¡Hasta luego!")
             break
