@@ -51,4 +51,14 @@ class TodoList:
             else:
                 print("Número de tarea inválido.")
                 continue
+    def reporte_en_curso_no_iniciadas(self):
+        tareas_en_curso_no_iniciadas = [tarea for tarea in self.tareas if tarea.estado in ["sin iniciar", "en progreso"]]
+        if not tareas_en_curso_no_iniciadas:
+            print("No hay tareas en curso ni no iniciadas.")
+        else:
+            print("Reporte de tareas en curso y no iniciadas:")
+            for tarea in tareas_en_curso_no_iniciadas:
+                print(f"- {tarea.descripcion} - Estado: {tarea.estado} - Prioridad: {tarea.prioridad}")
+
+    
 
