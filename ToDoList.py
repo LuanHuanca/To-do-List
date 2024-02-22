@@ -51,6 +51,33 @@ class TodoList:
             else:
                 print("Número de tarea inválido.")
                 continue
+
+    def eliminar_tarea(self):
+        tareas_activas = [tarea for tarea in self.tareas if tarea.estado in ["sin iniciar", "en progreso"]]
+        
+        if not tareas_activas:
+            print("No hay tareas en curso ni no iniciadas para eliminar.")
+            return
+
+        print("Tareas disponibles para eliminar:")
+        for indice, tarea in enumerate(tareas_activas, start=1):
+            print(f"{indice}. {tarea.descripcion} - Estado: {tarea.estado} - Prioridad: {tarea.prioridad}")
+
+        while True:
+            opcion = input("Seleccione el número de la tarea que desea eliminar: ")
+            if not opcion.isdigit():
+                print("Debe ingresar un número válido.")
+                continue
+
+            indice = int(opcion)
+            if 1 <= indice <= len(tareas_activas):
+                tarea_eliminada = tareas_activas.pop(indice - 1)  # Almacenar la tarea eliminada
+                self.tareas.remove(tarea_eliminada)  # Eliminar la tarea de la lista principal
+                print(f"Tarea '{tarea_eliminada.descripcion}' eliminada exitosamente.")
+                break
+            else:
+                print("Número de tarea inválido.")
+
     def reporte_en_curso_no_iniciadas(self):
         tareas_en_curso_no_iniciadas = [tarea for tarea in self.tareas if tarea.estado in ["sin iniciar", "en progreso"]]
         if not tareas_en_curso_no_iniciadas:
@@ -60,5 +87,11 @@ class TodoList:
             for tarea in tareas_en_curso_no_iniciadas:
                 print(f"- {tarea.descripcion} - Estado: {tarea.estado} - Prioridad: {tarea.prioridad}")
 
-    
-
+    def reporte_completadas(self):
+        tareas_completadas = [tarea for tarea in self.tareas if tarea.estado == "completado"]
+        if not tareas_completadas:
+            print("No hay tareas completadas.")
+        else:
+            print("Reporte de tareas completadas:")
+            for tarea in tareas_completadas:
+                print(f"- {tarea.descripcion} - Estado: {tarea.estado} - Prioridad: {tarea.prioridad}")
