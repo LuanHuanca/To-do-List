@@ -24,7 +24,7 @@ def menu():
         elif opcion == "5":
             todo_list.reporte_completadas()
         elif opcion == "6":
-            print("¡Hasta luego!")
+            print("Fin de la lista de tareas")
             break
         else:
             print("Opción inválida. Intente nuevamente.")
