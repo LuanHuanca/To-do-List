@@ -26,3 +26,9 @@ mediante consola , utilizando POO
    3. Eliminar tareas de la lista
    4. Generar reportes por estados
    5. Visualizar tareas 
+
+# Modificaciones
+Aun principio se tenia una estructura de programacion por modulo con una interfaz
+sencilla pero funcional, el cual cumplia con los requisitos minimos .
+Pero para aumentar funcionalidades y simplificacion del codigo en un futuro se dicidio
+optar por la POO para la estructura general del proyecto

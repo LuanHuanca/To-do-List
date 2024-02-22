@@ -1,3 +1,5 @@
+from Tarea import Tarea
+
 class TodoList:
     def __init__(self):
         self.tareas = []
@@ -20,7 +22,6 @@ class TodoList:
         estado = "sin iniciar"
         self.tareas.append(Tarea(descripcion, estado, prioridad))
         print("Tarea agregada exitosamente.")
-
     def marcar_estado(self):
         tareas_disponibles = [tarea for tarea in self.tareas if tarea.estado in ["sin iniciar", "en progreso"]]
         if not tareas_disponibles:

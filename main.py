@@ -5,7 +5,7 @@ def menu():
     while True:
         print("\n--- TO-DO LIST ---")
         print("1. Agregar nueva tarea")
-        print("2. Marcar tarea como completada")
+        print("2. Marcar estado de tarea")
         print("3. Eliminar tarea")
         print("4. Generar reporte de tareas en curso y no iniciadas")
         print("5. Generar reporte de tareas completadas")
@@ -16,7 +16,7 @@ def menu():
         if opcion == "1":
             todo_list.agregar_tarea()
         elif opcion == "2":
-            todo_list.marcar_completada()
+            todo_list.marcar_estado()
         elif opcion == "3":
             todo_list.eliminar_tarea()
         elif opcion == "4":
